@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <% if (!locals.content || !locals.name) { %>
+        <h1>Hi, Welcom to out Blog Website</h1>
+        <form action="/submit" method="post">
+            <input type="text" name="name" placeholder="Name">
+            <input type="text" name="content" placeholder="Start you blog...">
+            <input type="submit" value="Create">
+        </form>
+        <% } %>
+            <% if (locals.content && locals.name) { %>
+                <h3>
+                    <%= name%>
+                </h3>
+                <p>
+                    <%= content %>
+                </p>
+                <form action="/home">
+                    <input type="submit" value="Delete">
+                </form>
+                <form action="/home">
+                    <input type="submit" value="Create New">
+                </form>
+                <% } %>
+</body>
+
+</html>
